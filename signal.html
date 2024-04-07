@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="validation.js" defer></script>
+
+
+
+
+
+    <title>Document</title>
+</head>
+<body>
+    <h1> LUX PM</h1><br>
+    <h2>зарегистрируйся,чтобы войти на наш сайт </h2>
+   <form action="index.php" method="post" id="signal" novalidate>
+    <div>
+    <label for="name">Имя</label>
+    <input type="text" id="name" name="name">
+    </div>
+
+    <div>
+        <label for="e_mail">E_mail</label>
+        <input type="email" id="e_mail" name="e_mail">
+    </div>
+    <div>
+        <label for="phone">Телефон</label>
+        <input type="phone" id="phone" name="phone">
+    </div>
+    <div>
+        <label for="password">пароль</label>
+        <input type="password" id="password" name="password">
+    </div>
+    <div>
+        <label for="password_confimation">подтвердите пароль</label>
+        <input type="password" id="password_confimation" name="password_confimation">
+    </div>
+    <button>отправить</button>
+   </form>
+</html>

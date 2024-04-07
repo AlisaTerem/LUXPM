@@ -1,0 +1,15 @@
+body {
+    background-color: black;
+}
+button {
+    background-color:rgb(221, 224, 227) ;
+    color: black;
+    border-radius: 5px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    
+}
+
+table caption {
+    color: #fff;;
+}

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<img src="img\luxPM1.jpg" height="400" width="1300">
+<img src="img\N-rrRGiCVgc.jpg" height="400" width="1300">
     <div  align="center">
     <a href="luxPM.php">
     <button>главная</button></a>

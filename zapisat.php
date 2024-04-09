@@ -16,12 +16,12 @@ require __DIR__ . '/header.php';
 				<table>
 					<tr>
 						<td style="width:50%;">
-							Стрижка<br>
-							<a href="zapisat.php?master_id=1"><img src="/kursovaya/img/alisa1.jpg" alt=""height="159" width="130"></a>
+							парикмахерские услуги<br>
+							<a href="zapisat.php?master_id=1"><img src="img\Alisa.jpg" alt=""height="159" width="130"></a>
 						</td>
 						<td style="width:50%;">
-							Покраска<br>
-							<a href="zapisat.php?master_id=2"><img src="/kursovaya/img/evgenia1.jpg" height="159" width="130" alt=""></a>
+							перманентный макияж<br>
+							<a href="zapisat.php?master_id=2"><img src="img\geka.jpg" height="159" width="130" alt=""></a>
 						</td>
 					</tr>
 				</table>

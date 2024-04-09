@@ -1,33 +1,7 @@
-<?php 
+<?php
+require __DIR__.'/header.php'; 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css\style.css">
-</head>
-<body>
-<img src="img\luxPM1.jpg" height="500" width="1000">
-    <div  align="center">
-    <a href="luxPM.php">
-    <button>главная</button></a>
-    <a href="onas.php">
-    <button>о нас</button></a>
-    <a href="prais.php">
-    <button><b>парикмахерские услуги</b></button> </a>
-    <a href="praisPM.php">
-    <button><b> перманентный макияж</b></button> </a>
-    <a href="rabota.php">
-    <button>наши работы</button> </a> 
-    <a href="zapisat.php">
-    <button>записаться</button></a>
-    <a href="otziv.php">
-    <button>отзывы</button></a>
-    <a href="lk.php">
-    <button>личный кабинет</button></a>
-    </div>
+
     <div>
     <h1 style="color: whitesmoke;">нашему уютному салону красоты LUX PM всего 3 года!</h1>
     <p>IUX PM-это идеальное место, где каждая женщина может почувствовать себя настоящей королевой.</p>

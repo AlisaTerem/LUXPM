@@ -11,5 +11,9 @@ button {
 }
 
 table caption {
-    color: #fff;;
+    color: #fff;
+}
+
+td {
+    vertical-align: top;
 }

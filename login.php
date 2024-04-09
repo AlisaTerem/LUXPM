@@ -1,7 +1,7 @@
 <?php
 $is_invalid= false;
+$mysli = require __DIR__ . "/database.php";
 if($_SERVER["REQUEST_METHOD"]=== "POST"){
-   $mysli = require __DIR__ . "/database.php";
    $sql= sprintf("SELECT * FROM users
    WHERE e_mail= '%s'",
   $mysli->real_escape_string ($_POST["e_mail"]));
@@ -20,6 +20,7 @@ if($_SERVER["REQUEST_METHOD"]=== "POST"){
    }
   }
   $is_invalid= true;
+
 }
 ?>
 <!DOCTYPE html>

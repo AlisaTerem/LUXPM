@@ -1,43 +1,63 @@
 <?php
 
+$mysqli = require __DIR__ . "/database.php";
+
+require __DIR__ . '/user.php';
+
+require __DIR__ . '/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<div class="conteiner">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="css\style.css">
-</head>
+	<div class="row text-center">
 
-<body>
-<img src="img\luxPM1.jpg" height="400" width="1300">
-    <div  align="center">
-    <a href="luxPM.php">
-    <button>главная</button></a>
-    <a href="onas.php">
-    <button> о нас </button> </a>
-    <a href="prais.php">
-    <button><b>парикмахерские услуги</b></button> </a>
-	<a href="praisPM.php">
-    <button><b> перманентный макияж</b></button> </a>
-    <a href="rabota.php">
-    <button>наши работы</button> </a>
-    <a href="zapisat.php">
-    <button>записаться</button></a>
-    <a href="otziv.php">
-    <button>отзывы</button></a>
-    <a href="lk.php">
-    <button>личный кабинет</button></a>
-    </div>
-<h1>выберите услуги на которые  вы бы хотели записаться</h1>
-<a href="zapisA.php">
-<button>парикмахерские услуги</button></a>
-<a href="zapisE.php">
-<button>перманентный макияж</button></a>
+		<div class="col-md-12">
+			<?php if (!isset($_GET['master_id'])) : ?>
+				<h2 class="mb-3">выберите мастера</h2>
+				<table>
+					<tr>
+						<td style="width:50%;">
+							Стрижка<br>
+							<a href="zapisat.php?master_id=1"><img src="/kursovaya/img/alisa1.jpg" alt=""height="159" width="130"></a>
+						</td>
+						<td style="width:50%;">
+							Покраска<br>
+							<a href="zapisat.php?master_id=2"><img src="/kursovaya/img/evgenia1.jpg" height="159" width="130" alt=""></a>
+						</td>
+					</tr>
+				</table>
+			<?php else : ?>
+				<h2 class="mb-3">выберите услугу</h2>
+				<form action="save.php" method="post">
+					<div class="form-group">
+						<label for="category_id">Услуга</label>
+						<select class="form-control" name="category_id">
+							<?php
+							$sql = sprintf("SELECT * FROM prais_list WHERE mastera_id='{$_GET['master_id']}'");
+							$result = $mysqli->query($sql);
+							$prais_list = $result->fetch_all();
+							?>
+							<?php foreach ($prais_list as $item) : ?>
+								<option value="<?= $item[0]; ?>"><?= $item[1]; ?></option>
+							<?php endforeach; ?>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="start">выберите дату:</label>
+						<input type="date" id="start" name="trip-start">
+					</div>
+					<div class="form-group">
+						<label for="time">Время: </label>
+						<input type="time" id="time" name="time" />
+					</div>
+					<button class="btn btn-success" type="submit">сохранить</button>
+				</form>
+			<?php endif; ?>
 
-	
+		</div>
+
+	</div>
+
+</div>
 
 </body>
 

@@ -108,6 +108,6 @@ require __DIR__ . '/header.php';
     </div>
 </div>
 
-    <?php
+<?php
 require __DIR__.'/footer.php'; 
 ?>

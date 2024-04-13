@@ -146,7 +146,7 @@ CREATE TABLE `users` (
   `password_hash` varchar(255) NOT NULL,
   `is_client` int(1) NOT NULL DEFAULT 1,
   `birthday` date DEFAULT NULL,
-  `reg_date` date NOT NULL DEFAULT current_timestamp()
+  `reg_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

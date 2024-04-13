@@ -13,11 +13,4 @@ if($mysqli->connect_errno){
     die("ошибка" . $mysqli->connect_errno);
 }
 return $mysqli;
-
-
-
-
-
-
-
 ?>

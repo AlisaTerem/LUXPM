@@ -1,19 +1,116 @@
-body {
+html {
     background-color: black;
-}
-button {
-    background-color:rgb(221, 224, 227) ;
-    color: black;
-    border-radius: 5px; 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    font-size: large;
 }
 
-table caption {
-    color: #fff;
+.wrapper { 
+    width: 100%;
+    max-width: 1380px;
+    margin: 0 auto;
 }
 
-td {
-    vertical-align: top;
+.flex {
+    display: flex;
+    gap: 2rem;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.header {
+    padding-top: 30px;
+}
+
+.header__links {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.link {
+    cursor: pointer;
+    transition: .3s all;
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    opacity: .75;
+    transform: scale(0.9);
+}
+
+.image {
+    width: 400px;
+    height: 100%;
+}
+
+.header__link {
+    text-transform: uppercase;
+}
+
+.about {
+    margin: 40px auto;
+}
+
+.flex-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.text-accent {
+    font-weight: bold;
+}
+
+.image-section {
+    justify-content:space-around;
+    align-items: center;
+}
+
+.qr-code {
+    width: 220px;
+    border-radius: 20px;
+}
+
+.quote {
+    border: 1px solid white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 25px auto;
+}
+
+.quote span {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    padding: 0 10px;
+    background-color: black;
+    font-size: medium;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    margin: 15px 0;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+}
+
+.grid-element {
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
 }

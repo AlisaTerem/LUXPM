@@ -1,5 +1,4 @@
 <?php
-
 $mysqli = require __DIR__ . "/database.php";
 
 require __DIR__ . '/user.php';

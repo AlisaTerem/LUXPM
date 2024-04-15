@@ -52,6 +52,13 @@ html {
     text-decoration: none;
 }
 
+.button {
+    padding: 7px 15px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+}
+
 .link:hover {
     opacity: .75;
     transform: scale(0.9);
@@ -71,8 +78,21 @@ html {
     margin: 40px auto;
 }
 
+.start {
+    margin: 40px auto;
+    align-items: center;
+}
+
 .portfolio {
     margin: 40px auto;
+}
+
+.price {
+    margin: 40px auto;
+}
+
+.price-block {
+    gap: 0.5rem;
 }
 
 .portfolio-card {
@@ -154,4 +174,28 @@ html {
     padding: 20px;
     border: 1px solid white;
     border-radius: 10px;
+}
+
+.grid-center {
+    text-align: center;
+}
+
+.table {
+    text-align: left;
+}
+
+.table__head-title {
+    font-size: x-large;
+    background-color: rgb(48, 48, 48);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table__head-title, .table__body-row {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
 }

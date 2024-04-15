@@ -5,7 +5,7 @@ $mysli = require __DIR__ . "/database.php";
 require __DIR__ . '/user.php';
 
 $sql = sprintf(
-    "SELECT * FROM checki   WHERE users_id= '%s'",
+    "SELECT `zayavka`.`id`, zayavka.vremya_nachala, mastera.title, prais_list.title, prais_list.stoimost FROM `zayavka` LEFT JOIN prais_list ON `prais_list`.`id` = zayavka.prais_id LEFT JOIN mastera ON mastera.id = zayavka.mastera_id WHERE zayavka.users_id= '%s' ",
     $mysli->real_escape_string($user["id"])
 );
 $result = $mysli->query($sql);
@@ -22,15 +22,17 @@ require __DIR__ . '/header.php';
         <th>дата</th>
             <th>услуга</th>
             <th>стоимость</th>
+            <th>мастар</th>
         </tr>
         <?php
         if ($checki) {
             foreach ($checki as $check) {
         ?>
                 <tr bgcolor="white" align="center">
-                <td><?=$check[2];?></td>
+                <td><?=date("d.m.Y H:i", strtotime($check[1]));?></td>
                     <td><?=$check[3];?></td>
                     <td><?=$check[4];?></td>
+                    <td><?=$check[2];?></td>
                 </tr>
         <?php
             }

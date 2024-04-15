@@ -26,8 +26,12 @@ require __DIR__ . '/header.php';
 					</tr>
 				</table>
 			<?php else : ?>
+				<?php if (isset($_GET['error'])) : ?>
+				<h3><?=$_GET['error'];?></h3>
+				<?php endif; ?>
 				<h2 class="mb-3">выберите услугу</h2>
 				<form action="save.php" method="post">
+					<input type="hidden" name="master_id" = value="<?=$_GET['master_id']?>">
 					<div class="form-group">
 						<label for="category_id">Услуга</label>
 						<select class="form-control" name="category_id">

@@ -27,6 +27,11 @@ textarea {
     width: auto !important;
 }
 
+.red {
+    background-color: red !important;
+    color: white !important;
+}
+
 .text-center {
     text-align: center;
 }

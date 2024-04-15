@@ -1,15 +1,19 @@
 html {
     background-color: black;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
     font-size: large;
 }
 
-input, button, a {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+input, button, a, select, textarea {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 select {
+    width: 100%;
+}
+
+textarea {
     width: 100%;
 }
 
@@ -236,6 +240,12 @@ select {
 .form {
     width: 100%;
     max-width: 300px;
+    margin: 0 auto;
+}
+
+.form__large {
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
 }
 

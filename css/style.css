@@ -9,10 +9,30 @@ input, button, a {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+select {
+    width: 100%;
+}
+
 .wrapper { 
     width: 100%;
     max-width: 1380px;
     margin: 0 auto;
+}
+
+.w-auto {
+    width: auto !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.gap-1 {
+    gap: 0.5rem !important;
 }
 
 .flex {
@@ -73,6 +93,12 @@ input, button, a {
 
 .image {
     width: 400px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image__little {
+    width: 200px;
     height: 100%;
     object-fit: cover;
 }
@@ -211,6 +237,10 @@ input, button, a {
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
+}
+
+.justify-between {
+    justify-content: space-between;
 }
 
 .form-block {

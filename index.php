@@ -48,7 +48,7 @@ $stmt=$mysqli->stmt_init();
                         $password_hash);
 
   if($stmt->execute()){
-    header("location: signal2.html");
+    header("location: signal2.php");
     exit;
   }
   else{

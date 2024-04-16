@@ -13,7 +13,7 @@ if (isset($_SESSION["user_id"])) {
 
 $sql = "SELECT * FROM prais_list WHERE id={$_POST["category_id"]}";
 $result = $mysqli->query($sql);
-$usluga = $result->fetch_assoc(); // получаем ус лугу
+$usluga = $result->fetch_assoc(); // получаем услугу
 
 $dts = $_POST["trip-start"] . " " . $_POST["time"] . ':00'; // время начала услуги
 $dtf = date('Y-m-d H:i:s', strtotime($dts) + (int)$usluga['time'] * 60);

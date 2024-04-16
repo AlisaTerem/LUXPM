@@ -26,11 +26,15 @@ require __DIR__ . '/header.php';
 			</div>
 
 			<?php else : ?>
+				<?php if (isset($_GET['error'])) : ?>
+				<h3><?=$_GET['error'];?></h3>
+				<?php endif; ?>
 				<h2>Выберите услугу</h2>
 				<form action="save.php" method="post" class="flex-col form gap-1 text-left">
+				<input type="hidden" name="master_id" = value="<?=$_GET['master_id']?>">
 					<div class="flex justify-between quote">
 						<span>Услуга</span>
-						<select class="form-block__input">
+						<select class="form-block__input"  name="category_id">
 							<?php
 							$sql = sprintf("SELECT * FROM prais_list WHERE mastera_id='{$_GET['master_id']}'");
 							$result = $mysqli->query($sql);

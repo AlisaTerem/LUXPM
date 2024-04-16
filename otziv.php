@@ -11,32 +11,39 @@ $result = $mysqli->query($sql);
 $checki = $result->fetch_all();
 require __DIR__ . '/header.php';
 ?>
-    <form action="savotz.php" method="post">
-    
-<h2 style="color: white;">оставьте пожалуйста ваш отзыв,<?= $user["name"];?>!</h2>
-<input type="text" name="text">
-<button>сохранить</button>
-    </form>
-    <table>
-        <tr bgcolor="lightgrey">
-        <th>дата</th>
-            <th>сообщение</th>
-            
-        </tr>
-        <?php
-        if ($checki) {
-            foreach ($checki as $check) {
-        ?>
-                <tr bgcolor="white" align="center">
-                <td><?=$check[3];?></td>
-                    <td><?=$check[2];?></td>
-                   
-                </tr>
-        <?php
-            }
-        }
-        ?>
 
+<div class="wrapper flex-col about">   
+    <h2>Оставьте пожалуйста ваш отзыв, <?= $user["name"];?>!</h2>
+    <form action="savotz.php" method="post" class="form__large flex-col">
+        <textarea type="text" name="text" class="form-block__input" rows="5" placeholder="Отличный мастер! Спасибо большое"></textarea>
+        <button class="button link">Оставить</button>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="table__head-title">Дата</th>
+                <th class="table__head-title">Сообщение</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                if ($checki) {
+                    foreach ($checki as $check) {
+            ?>
+                <tr>
+                    <td class="table__body-row"><?=$check[3];?></td>
+                    <td class="table__body-row"><?=$check[2];?></td>
+                </tr>
+            <?php
+                }
+            }
+            ?>
+        </tbody>
     </table>
-</body>
-</html>
+</div>
+
+    
+<?php
+    require __DIR__.'/footer.php'; 
+?>

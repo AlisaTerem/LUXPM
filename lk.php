@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 $mysli = require __DIR__ . "/database.php";
 
@@ -15,41 +18,55 @@ require __DIR__ . '/header.php';
 
 ?>
 
-<h1 style="color: whitesmoke;">добро пожаловать в свой профиль,<?= $user["name"]; ?>!</h1>
-<h2>услуги, которые вам  оказали салон</h2>
-<table>
-        <tr bgcolor="lightgrey">
-        <th>дата</th>
-            <th>услуга</th>
-            <th>стоимость</th>
-            <th>мастар</th>
-        </tr>
-        <?php
-        if ($checki) {
-            foreach ($checki as $check) {
-        ?>
-                <tr bgcolor="white" align="center">
+<div class="wrapper about flex-col">
+    <h1 style="color: whitesmoke;">Добро пожаловать в свой профиль, <?= $user["name"]; ?>!</h1>
+    <h2>Услуги, которые вам оказал салон</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="table__head-title">Дата</th>
+                <th class="table__head-title">Услуга</th>
+                <th class="table__head-title">Стоимость</th>
+                <th class="table__head-title">Мастер</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                $rows_added = false;
+                if ($checki) {
+                    foreach ($checki as $check) {
+                        $rows_added = true;
+            ?>
+            <tr>
                 <td><?=date("d.m.Y H:i", strtotime($check[1]));?></td>
-                    <td><?=$check[3];?></td>
-                    <td><?=$check[4];?></td>
-                    <td><?=$check[2];?></td>
-                </tr>
-        <?php
-            }
-        }
-        ?>
+                <td class="table__body-row"><?=isset($check[3]) ? $check[3] : '&mdash;';?></td>
+                <td class="table__body-row"><?=isset($check[4]) ? $check[4] : '&mdash;';?></td>
+                <td class="table__body-row"><?=isset($check[2]) ? $check[2] : '&mdash;';?></td>
+            </tr>
+            <?php
+                    }
+                }
+                if (!$rows_added) {
+            ?>
+            <tr>
+                <td class="table__body-row">&mdash;</td>
+                <td class="table__body-row">&mdash;</td>
+                <td class="table__body-row">&mdash;</td>
+                <td class="table__body-row">&mdash;</td>
+            </tr>
+            <?php
+                }
+            ?>
+        </tbody>
+
 
     </table>
-    <a href="otziv.php">
-    <button>оставить отзыв</button></a>
-    <a href="start.php">
-    <button>выход</button></a>
+    <div>
+        <a href="otziv.php" class="button link">Оставить отзыв</a>
+        <a href="start.php" class="button link red">Выход</a>
+    </div>
+</div>
 
-
-
-
-
-
-</body>
-
-</html>
+<?php
+    require __DIR__.'/footer.php'; 
+?>

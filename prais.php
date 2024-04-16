@@ -4,85 +4,86 @@ $mysli = require __DIR__ . "/database.php";
 
 require __DIR__ . '/header.php';
 ?>
-<h1 align="center"> прайс-лист салона LUX PM</h1>
-<div>
-    <table bgcolor="black">
-        <tr>
-            <td style="color:white;">
-                парикмахерские услуги
-            </td>
-            <td style="color:white;">
-                парикмахерские услуги
-            </td>
-        </tr>
-        <tr>
-            <td>
+<?php
+$sql1 = sprintf("SELECT * FROM prais_list WHERE mastera_id='1'");
+$result1 = $mysli->query($sql1);
+$prais_list1 = $result1->fetch_all();
+
+$sql2 = sprintf("SELECT * FROM prais_list WHERE mastera_id='2'");
+$result2 = $mysli->query($sql2);
+$prais_list2 = $result2->fetch_all();
+?>
+
+<div class="wrapper price flex-col">
+    <h1>Прайс-лист салона LUX PM</h1>
+    <div class="flex-col price-block">
+        <h2>Парикмахерские услуги Мастера Алисы</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="table__head-title">Вид услуги</th>
+                    <th class="table__head-title">Стоимость</th>
+                </tr>
+            </thead>
+            <tbody>
                 <?php
-                $sql = sprintf("SELECT * FROM prais_list WHERE mastera_id='1'");
-                $result = $mysli->query($sql);
-                $prais_list = $result->fetch_all();
+                if ($prais_list1) {
+                    foreach ($prais_list1 as $prais) {
                 ?>
-                <table>
-                    <tr bgcolor="lightgrey">
-
-                        <th>вид услуги</th>
-                        <th>стоимость</th>
+                    <tr>
+                        <td class="table__body-row"><?= $prais[1]; ?></td>
+                        <td class="table__body-row"><?= $prais[4]; ?></td>
                     </tr>
-                    <?php
-                    if ($prais_list) {
-                        foreach ($prais_list as $prais) {
-                    ?>
-                            <tr bgcolor="white" align="center">
-
-                                <td><?= $prais[1]; ?></td>
-                                <td><?= $prais[4]; ?></td>
-                            </tr>
-
-                    <?php
-                        }
-                    }
-                    ?>
-                </table>
-            </td>
-            <td>
                 <?php
-                $sql = sprintf("SELECT * FROM prais_list WHERE mastera_id='2'");
-                $result = $mysli->query($sql);
-                $prais_list = $result->fetch_all();
-                ?>
-                <table>
-                    <tr bgcolor="lightgrey">
-
-                        <th>вид услуги</th>
-                        <th>стоимость</th>
-                    </tr>
-                    <?php
-                    if ($prais_list) {
-                        foreach ($prais_list as $prais) {
-                    ?>
-                            <tr bgcolor="white" align="center">
-
-                                <td><?= $prais[1]; ?></td>
-                                <td><?= $prais[4]; ?></td>
-                            </tr>
-
-                    <?php
-                        }
                     }
-                    ?>
-                </table>
-            </td>
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="flex-col price-block">
+        <h2>Прайс-лист Мастера Евгении</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="table__head-title">Вид услуги</th>
+                    <th class="table__head-title">Стоимость</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                if ($prais_list2) {
+                    foreach ($prais_list2 as $prais) {
+                ?>
+                    <tr>
+                        <td class="table__body-row"><?= $prais[1]; ?></td>
+                        <td class="table__body-row"><?= $prais[4]; ?></td>
+                    </tr>
+                <?php
+                    }
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
 
-        </tr>
 
-    </table>
 
-</div>
-<div>
-    <p>Консультация бесплатно. Тест-пряди бесплатно. Цена может быть выше или ниже указанной в прайсе в зависимости от густоты волос и сложности исполнения работы.</p>
+    <div>
+        <div class="grid">
+            <div class="grid-element grid-center">
+                <span>Консультация бесплатно</span>
+            </div>
+            <div class="grid-element grid-center">
+                <span>Тест-пряди бесплатно</span>
+            </div>
+        </div>
+    </div>
 
+    <p>Цена может быть выше или ниже указанной в прайсе в зависимости от густоты волос и сложности исполнения работы.</p>
     <p>Окончательную цену обсуждайте с мастером на консультации. </p>
 </div>
-</body>
 
-</html>
+<?php
+require __DIR__.'/footer.php'; 
+?>

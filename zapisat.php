@@ -1,40 +1,36 @@
 <?php
-
 $mysqli = require __DIR__ . "/database.php";
 
 require __DIR__ . '/user.php';
 
 require __DIR__ . '/header.php';
 ?>
-<div class="conteiner">
 
-	<div class="row text-center">
+<div class="wrapper about">
+	<div class="text-center">
+		<?php if (!isset($_GET['master_id'])) : ?>
+			<h2>Выберите мастера</h2>
+			<div class="flex">
+				<div class="quote link w-auto">
+					<span>Парикмахерские услуги</span>
+					<a href="zapisat.php?master_id=1">
+						<img src="img\Alisa.jpg" class="image">
+					</a>
+				</div>
+				<div class="quote link w-auto">
+					<span>Перманентный макияж</span>
+					<a href="zapisat.php?master_id=2">
+						<img src="img\geka.jpg" class="image">
+					</a>
+				</div>
+			</div>
 
-		<div class="col-md-12">
-			<?php if (!isset($_GET['master_id'])) : ?>
-				<h2 class="mb-3">выберите мастера</h2>
-				<table>
-					<tr>
-						<td style="width:50%;">
-							парикмахерские услуги<br>
-							<a href="zapisat.php?master_id=1"><img src="img\Alisa.jpg" alt=""height="159" width="130"></a>
-						</td>
-						<td style="width:50%;">
-							перманентный макияж<br>
-							<a href="zapisat.php?master_id=2"><img src="img\geka.jpg" height="159" width="130" alt=""></a>
-						</td>
-					</tr>
-				</table>
 			<?php else : ?>
-				<?php if (isset($_GET['error'])) : ?>
-				<h3><?=$_GET['error'];?></h3>
-				<?php endif; ?>
-				<h2 class="mb-3">выберите услугу</h2>
-				<form action="save.php" method="post">
-					<input type="hidden" name="master_id" = value="<?=$_GET['master_id']?>">
-					<div class="form-group">
-						<label for="category_id">Услуга</label>
-						<select class="form-control" name="category_id">
+				<h2>Выберите услугу</h2>
+				<form action="save.php" method="post" class="flex-col form gap-1 text-left">
+					<div class="flex justify-between quote">
+						<span>Услуга</span>
+						<select class="form-block__input">
 							<?php
 							$sql = sprintf("SELECT * FROM prais_list WHERE mastera_id='{$_GET['master_id']}'");
 							$result = $mysqli->query($sql);
@@ -45,24 +41,21 @@ require __DIR__ . '/header.php';
 							<?php endforeach; ?>
 						</select>
 					</div>
-					<div class="form-group">
-						<label for="start">выберите дату:</label>
-						<input type="date" id="start" name="trip-start">
+					<div class="flex justify-between quote">
+						<span>Дата</span>
+						<input type="date" id="start" name="trip-start" class="form-block__input" />
 					</div>
-					<div class="form-group">
-						<label for="time">Время: </label>
-						<input type="time" id="time" name="time" />
+					<div class="flex justify-between quote">
+						<span>Время:</span>
+						<input type="time" id="time" name="time" class="form-block__input" />
 					</div>
-					<button class="btn btn-success" type="submit">сохранить</button>
+					<button class="link button" type="submit">Сохранить</button>
 				</form>
 			<?php endif; ?>
-
-		</div>
-
+			
 	</div>
-
 </div>
 
-</body>
-
-</html>
+<?php
+require __DIR__.'/footer.php'; 
+?>

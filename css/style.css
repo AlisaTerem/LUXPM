@@ -1,19 +1,279 @@
-body {
+html {
     background-color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    font-size: large;
 }
-button {
-    background-color:rgb(221, 224, 227) ;
+
+input, button, a, select, textarea {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+select {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+}
+
+.wrapper { 
+    width: 100%;
+    max-width: 1480px;
+    margin: 0 auto;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
+
+.w-auto {
+    width: auto !important;
+}
+
+.red {
+    background-color: red !important;
+    color: white !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.gap-1 {
+    gap: 0.5rem !important;
+}
+
+.flex {
+    display: flex;
+    gap: 2rem;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.header {
+    padding: 30px 0;
+}
+
+.line {
+    height: 1px;
+    background-color: grey;
+    width: 100%;
+}
+
+.footer {
+    padding: 0 0 50px;
+    justify-content: space-between;
+}
+
+.footer-block {
+    gap: 0.5rem;
+}
+
+.header__links {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.link {
+    cursor: pointer;
+    transition: .3s all;
+    color: white;
+    text-decoration: none;
+}
+
+.button {
+    padding: 7px 15px;
+    background-color: white;
     color: black;
-    border-radius: 5px; 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    
+    border-radius: 10px;
+    width: fit-content;
+    border: 0;
+    margin: 0 auto;
 }
 
-table caption {
-    color: #fff;
+.link:hover {
+    opacity: .75;
+    transform: scale(0.9);
 }
 
-td {
-    vertical-align: top;
+.image {
+    width: 400px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image__little {
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header__link {
+    text-transform: uppercase;
+}
+
+.about {
+    margin: 40px auto;
+}
+
+.start {
+    margin: 40px auto;
+    align-items: center;
+}
+
+.portfolio {
+    margin: 40px auto;
+}
+
+.price {
+    margin: 40px auto;
+}
+
+.price-block {
+    gap: 0.5rem;
+}
+
+.portfolio-card {
+    gap: 1rem;
+    align-items: center;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfolio-section {
+    margin-bottom: 100px;
+}
+
+.portfolio-card span {
+    color: lightgrey;
+    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.flex-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.text-accent {
+    font-weight: bold;
+}
+
+.link-accent {
+    text-decoration: underline;
+}
+
+.image-section {
+    justify-content:space-around;
+    align-items: center;
+}
+
+.qr-code {
+    width: 220px;
+    border-radius: 20px;
+}
+
+.quote {
+    border: 1px solid white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 25px auto;
+}
+
+.quote span {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    padding: 0 10px;
+    background-color: black;
+    font-size: medium;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    margin: 15px 0;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+}
+
+.grid-element {
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.grid-center {
+    text-align: center;
+}
+
+.table {
+    text-align: left;
+}
+
+.table__head-title {
+    font-size: x-large;
+    background-color: rgb(48, 48, 48);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table__head-title, .table__body-row {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+}
+
+.form {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.form__large {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.form-block {
+    gap: 0.5rem;
+}
+
+.form-block__input {
+    padding: 7px 15px;
+    border-radius: 7px;
+}
+
+.login {
+    margin: 40px auto;
+    text-align: center;
 }

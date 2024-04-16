@@ -1,20 +1,16 @@
-<?php 
+<?php
+require __DIR__ . '/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css\style.css">
-    <title>Document</title>
-</head>
-<body>
-<img src="img\EA (2).jpg" height="500" width="1000">
-    <h1>для того,чтобы войти в систему, необходимо войти или зарегестрироваться</h1>
-    <a href="login.php">
-    <button>войти</button></a>
-    <a href="signal.html">
-    <button>зарегистрироваться</button></a>
-    
-</body>
-</html>
+
+<div class="wrapper start flex-col">
+    <img src="img\EA (3).png" width="700">
+    <h2>Для того, чтобы войти в систему, необходимо войти или зарегестрироваться</h2>
+    <div class="flex">
+        <a href="login.php" class="link button">Войти</a>
+        <a href="signal.php" class="link button">Зарегистрироваться</a>
+    </div>
+</div>
+
+<?php
+require __DIR__.'/footer.php'; 
+?>

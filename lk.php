@@ -8,7 +8,7 @@ $mysli = require __DIR__ . "/database.php";
 require __DIR__ . '/user.php';
 
 $sql = sprintf(
-    "SELECT * FROM checki   WHERE users_id= '%s'",
+    "SELECT `zayavka`.`id`, zayavka.vremya_nachala, mastera.title, prais_list.title, prais_list.stoimost FROM `zayavka` LEFT JOIN prais_list ON `prais_list`.`id` = zayavka.prais_id LEFT JOIN mastera ON mastera.id = zayavka.mastera_id WHERE zayavka.users_id= '%s' ",
     $mysli->real_escape_string($user["id"])
 );
 $result = $mysli->query($sql);
@@ -27,6 +27,7 @@ require __DIR__ . '/header.php';
                 <th class="table__head-title">Дата</th>
                 <th class="table__head-title">Услуга</th>
                 <th class="table__head-title">Стоимость</th>
+                <th class="table__head-title">Мастер</th>
             </tr>
         </thead>
         <tbody>
@@ -37,9 +38,10 @@ require __DIR__ . '/header.php';
                         $rows_added = true;
             ?>
             <tr>
-                <td class="table__body-row"><?=isset($check[2]) ? $check[2] : '&mdash;';?></td>
+                <td><?=date("d.m.Y H:i", strtotime($check[1]));?></td>
                 <td class="table__body-row"><?=isset($check[3]) ? $check[3] : '&mdash;';?></td>
                 <td class="table__body-row"><?=isset($check[4]) ? $check[4] : '&mdash;';?></td>
+                <td class="table__body-row"><?=isset($check[2]) ? $check[2] : '&mdash;';?></td>
             </tr>
             <?php
                     }
@@ -47,6 +49,7 @@ require __DIR__ . '/header.php';
                 if (!$rows_added) {
             ?>
             <tr>
+                <td class="table__body-row">&mdash;</td>
                 <td class="table__body-row">&mdash;</td>
                 <td class="table__body-row">&mdash;</td>
                 <td class="table__body-row">&mdash;</td>

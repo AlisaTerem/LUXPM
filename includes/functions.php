@@ -18,7 +18,7 @@ function get_header()
         <header class='wrapper header flex-col'>
             <div class="flex">
                 <a class="link" href="/"><img src="/assets/images/luxPM1.jpg" width="230"></a>
-                <div class='header__links'>
+                <div class='header__links flex-wrap'>
                     <a href="/index.php" class="link header__link">Главная</a>
                     <a href="/about.php" class="link header__link">О нас </a>
                     <a href="/price-list.php" class="link header__link">Услуги </a>
@@ -48,8 +48,8 @@ function get_footer()
     ?>
         <footer class='wrapper flex-col'>
             <div class="line"></div>
-            <div class="flex footer">
-                <div class="flex">
+            <div class="flex flex-wrap footer">
+                <div class="flex flex-wrap">
                     <div class="flex-col">
                         <h3>Режим работы</h3>
                         <div class="flex-col footer-block">
@@ -59,7 +59,7 @@ function get_footer()
                     </div>
                     <div class="flex-col">
                         <h3>Контакты</h3>
-                        <div class="flex">
+                        <div class="flex flex-wrap">
                             <div class="flex-col footer-block">
                                 <span>Алиса</span>
                                 <a class="link text-accent link-accent" href="tel:89125411928">89125411928</a>

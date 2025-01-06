@@ -6,7 +6,7 @@ get_header();
 <div class="wrapper about">
     <div class="text-center">
         <h2>Работы наших специалистов</h2>
-        <div class="flex">
+        <div class="flex flex-wrap">
             <div class="quote link w-auto">
                 <span>Работы мастера ПМ Евгении</span>
                 <a href="portfolio/evgenia.php">

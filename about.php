@@ -33,7 +33,7 @@ get_header();
             <p>«Справлюсь ли я с укладкой самостоятельно? Как правильно ухаживать за волосами? Какие средства лучше использовать?» – Нередкое беспокойство клиентов можно смело оставить в прошлом. Я расскажу Вам, как сохранить результат как можно дольше и поделюсь профессиональными секретами личного ухода.</p>
         </div>
 
-        <div class="image-section flex">
+        <div class="image-section flex flex-wrap">
             <img src="/assets/images/AV4.jpg" class="image">
             <img src="/assets/images/QRcodAlisac.jpg" class="image qr-code">
             <img src="/assets/images/AV1.jpg" class="image">
@@ -72,7 +72,7 @@ get_header();
                 Радость, которую испытывают клиенты, является мощным зарядом позитива для меня лично!🫶</p>
         </div>
 
-        <div class="image-section flex">
+        <div class="image-section flex flex-wrap">
             <img src="/assets/images/E3.jpg" class="image">
             <img src="/assets/images/QRcodEvg1.jpg" class="image qr-code">
             <img src="/assets/images/evgenia1.jpg" class="image">

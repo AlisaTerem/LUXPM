@@ -72,7 +72,7 @@ get_header();
 
         <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="flex-col form-block">
-                <div class="flex">
+                <div class="flex flex-wrap">
                     <select name="prices_id[<?= $i ?>]" id="master_id[<?= $i ?>]" class="form-block__input">
                         <option value="0">Нет</option>
                         <?php foreach ($prices as $price) : ?>

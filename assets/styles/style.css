@@ -63,6 +63,10 @@ textarea {
   gap: 1rem;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .header {
   padding: 30px 0;
 }
@@ -226,7 +230,6 @@ textarea {
   padding: 15px 20px;
   border-radius: 10px;
   position: relative;
-  width: 100%;
   max-width: 900px;
   margin: 25px auto;
 }
@@ -310,4 +313,10 @@ textarea {
 .login {
   margin: 40px auto;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }

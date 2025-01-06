@@ -41,7 +41,7 @@ get_header();
 	<div class="text-center">
 		<?php if (!isset($_GET['master_id'])) : ?>
 			<h2>Выберите мастера</h2>
-			<div class="flex">
+			<div class="flex flex-wrap">
 				<div class="quote link w-auto">
 					<span>Парикмахерские услуги</span>
 					<a href="zapisat.php?master_id=1">
@@ -63,7 +63,7 @@ get_header();
 			<h2>Выберите услугу</h2>
 			<form method="post" class="flex-col form gap-1 text-left">
 				<input type="hidden" name="master_id" value="<?= $_GET['master_id'] ?>">
-				<div class="flex justify-between quote">
+				<div class="flex flex-wrap justify-between quote">
 					<span>Услуга</span>
 					<select class="form-block__input" name="category_id">
 						<?php
@@ -74,11 +74,11 @@ get_header();
 						<?php endforeach; ?>
 					</select>
 				</div>
-				<div class="flex justify-between quote">
+				<div class="flex flex-wrap justify-between quote">
 					<span>Дата</span>
 					<input type="date" id="start" name="trip-start" class="form-block__input" />
 				</div>
-				<div class="flex justify-between quote">
+				<div class="flex flex-wrap justify-between quote">
 					<span>Время:</span>
 					<input type="time" id="time" name="time" class="form-block__input" />
 				</div>

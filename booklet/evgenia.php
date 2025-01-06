@@ -53,7 +53,7 @@ get_header();
                 </div>
             </div>
         </div>
-        <div class="image-section flex">
+        <div class="image-section flex flex-wrap">
             <img src="/assets/images/E3.jpg" class="image">
             <img src="/assets/images/QRcodEvg1.jpg" class="image qr-code">
             <img src="/assets/images/evgenia1.jpg" class="image">

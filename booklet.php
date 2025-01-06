@@ -6,7 +6,7 @@ get_header();
 <div class="wrapper about">
     <div class="text-center">
         <h2>Рекомендации мастеров салона LUX PM</h2>
-        <div class="flex">
+        <div class="flex flex-wrap">
             <div class="quote link w-auto">
                 <span>Рекомендации мастера-парикмахера</span>
                 <a href="booklet/alisa.php">

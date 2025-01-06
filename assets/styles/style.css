@@ -153,6 +153,16 @@ textarea {
   margin: 40px auto;
 }
 
+.video {
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+}
+
+.video-container {
+  flex-wrap: wrap;
+}
+
 .price {
   margin: 40px auto;
 }
